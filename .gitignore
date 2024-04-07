@@ -1,4 +1,5 @@
 apienv/
+api.sock
 
 # Temp files
 *~
