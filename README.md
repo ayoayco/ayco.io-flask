@@ -1,5 +1,6 @@
 # Ayo Ayco's personal site built with Flask
 
+## Background
 Yet another rewrite of my [personal site](https://ayo.ayco.io)
 
 ## Set up
