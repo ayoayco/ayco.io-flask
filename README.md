@@ -3,8 +3,8 @@
 ## Background
 Yet another rewrite of my [personal site](https://ayo.ayco.io)
 
-## Development -- needs Debian
-1. Set up your machine. See [digitalOcean tutorial](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-20-04) (uses cookies)
+## Development -- needs Linux / MacOS
+1. Set up your machine
 
     ```bash
     # update repositories
@@ -30,15 +30,23 @@ Yet another rewrite of my [personal site](https://ayo.ayco.io)
     $ . .venv/bin/activate
 
     # install wheel:
-    $ pip install wheel
+    (.venv)$ pip install wheel
 
     # install gunicorn & flask:
-    $ pip install gunicorn flask
+    (.venv)$ pip install flask
 
     # rejoice!
     ```
 
-3. To start development:
-    1. allow port usage: `sudo ufw allow 5000`
-    2. run the development server: `python api.py``
+3. To start development, run the following:
+    ```bash
+    (.venv)$ python api.py
+    ```
+
+    > Note: On a Mac, the default port 5000 is used by AirDrop & Handoff; you may have to turn those off
+
 4. After development session, deactivate the python env with: `deactivate`
+
+## Deployment
+
+For deployment, the recommended setup is with production server `gunicorn` and reverse proxy `nginx`. See the [DigitalOcean tutorial](https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-20-04) (their website uses cookies).
