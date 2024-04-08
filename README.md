@@ -1,9 +1,13 @@
-# Ayo Ayco's personal site built with Flask
+# Flask server for my personal site
 
 ## Background
-Yet another rewrite of my [personal site](https://ayo.ayco.io)
+
+This is the default server running at [https://ayo.ayco.io](https://ayco.io). Currently its main responsibility is serving static files generated with Astro SSG which I maintain in a [separate project](https://ayco.io/sh/ayco.io-astro). The generated files from that project will populate a `dist` directory in here, which will then be served as-is.
+
+My main motivation for running my personal site behind this Flask server is to easily develop REST APIs later in the `/api` route using Python. I didn't want to use the default Astro production server for this as I am looking to work with Python more.
 
 ## Development
+
 1. Set up your **Debian** (for MacOS, search for counterpart instructions)
 
     ```bash
@@ -44,6 +48,8 @@ Yet another rewrite of my [personal site](https://ayo.ayco.io)
     ```
 
     > Note: On a Mac, the default port 5000 is used by AirDrop & Handoff; you may have to turn those off
+
+4. Populate a `dist` directory with static files (e.g., `*.html` for pages). Currently I generate static files in a separate [Astro site project](https://ayco.io/sh/ayco.io-astro) -- see instructions on how to set it up separately, run the build script and copy the `dist` here.
 
 4. After development session, deactivate the python env
     ```bash
