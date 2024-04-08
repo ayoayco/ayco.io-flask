@@ -3,8 +3,8 @@
 ## Background
 Yet another rewrite of my [personal site](https://ayo.ayco.io)
 
-## Development -- needs Linux / MacOS
-1. Set up your machine
+## Development
+1. Set up your **Debian** (for MacOS, search for counterpart instructions)
 
     ```bash
     # update repositories
@@ -45,7 +45,10 @@ Yet another rewrite of my [personal site](https://ayo.ayco.io)
 
     > Note: On a Mac, the default port 5000 is used by AirDrop & Handoff; you may have to turn those off
 
-4. After development session, deactivate the python env with: `deactivate`
+4. After development session, deactivate the python env
+    ```bash
+    (.venv)$ deactivate
+    ```
 
 ## Deployment
 
