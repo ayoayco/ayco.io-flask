@@ -5,9 +5,19 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/api')
-def api():
-    return 'API'
+@app.route('/showcase')
+def showcase():
+    return render_template('showcase.html')
+
+@app.route('/stuff')
+def stuff():
+    return render_template('stuff.html')
+
+@app.route('/now')
+def now():
+    return render_template('now.html')
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
