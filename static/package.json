@@ -1,0 +1,16 @@
+{
+  "name": "twists-and-shapes-and-turns",
+  "version": "0.0.1",
+  "description": "This is a game about crazy inventions",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx http-server .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "scp -r . ayo@ayco.io:~/kaboom/"
+  },
+  "author": "Ayo and Kahel",
+  "license": "ISC",
+  "dependencies": {
+    "matter-js": "^0.18.0"
+  }
+}
