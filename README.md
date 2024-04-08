@@ -40,7 +40,7 @@ Yet another rewrite of my [personal site](https://ayo.ayco.io)
 
 3. To start development, run the following:
     ```bash
-    (.venv)$ python api.py
+    (.venv)$ flask --app web.py --debug run
     ```
 
     > Note: On a Mac, the default port 5000 is used by AirDrop & Handoff; you may have to turn those off
