@@ -11,7 +11,7 @@ Yet another rewrite of my [personal site](https://ayo.ayco.io)
     $ sudo apt update
 
     # install python stuff
-    $ sudo apt install python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools python-venv
+    $ sudo apt install python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools python3-venv
     ```
 
 2. Install dependencies
@@ -19,6 +19,9 @@ Yet another rewrite of my [personal site](https://ayo.ayco.io)
     ```bash
     # clone the project 
     $ git clone git@git.sr.ht:~ayoayco/ayco.io-flask
+
+    # go into the project directory
+    $ cd ayco.io-flask
 
     # create python environment:
     $ python3 -m venv .venv
