@@ -1,5 +1,7 @@
 # Ayo Ayco's personal site built with Flask
 
+Yet another rewrite of my [personal site](https://ayo.ayco.io)
+
 ## Set up
 1. [Install Flask and dependencies](https://flask.palletsprojects.com/en/3.0.x/installation/). The following are the steps for MacOS/Linux:
     1. create python environment: `python3 -m venv .venv`
