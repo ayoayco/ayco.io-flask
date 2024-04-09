@@ -12,5 +12,10 @@ def dist(path):
     else:
         return send_from_directory('dist', path + '/index.html')
 
+@app.errorhandler(404)
+def not_found(e):
+    return send_from_directory('dist', '404.html')
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
