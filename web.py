@@ -14,7 +14,7 @@ def dist(path):
 
 @app.errorhandler(404)
 def not_found(e):
-    return send_from_directory('dist', '404.html')
+    return send_from_directory('dist', '404.html'), 404
 
 
 if __name__ == '__main__':
