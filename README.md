@@ -5,7 +5,7 @@
 This is the default server running at [https://ayo.ayco.io](https://ayco.io). Its main responsibility is serving static files generated with Astro SSG which I maintain in a [separate project](https://ayco.io/sh/ayco.io-astro). The generated files from that project will populate a `dist` directory in here, which will then be served as-is.
 
 Additional features are:
-1. partial .html templates in `partials` directory are served in route `/p/*` (e.g, feed.html partial is accessed via `/p/feed`)
+1. route `/p/*` to serve partial .html templates in `partials` directory (e.g, `partials/example.html` partial is accessed via `/p/example`)
 
 ## Development
 
