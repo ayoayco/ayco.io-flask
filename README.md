@@ -2,9 +2,11 @@
 
 ## Background
 
-This is the default server running at [https://ayo.ayco.io](https://ayco.io). Currently its main responsibility is serving static files generated with Astro SSG which I maintain in a [separate project](https://ayco.io/sh/ayco.io-astro). The generated files from that project will populate a `dist` directory in here, which will then be served as-is.
+This is the default server running at [https://ayo.ayco.io](https://ayco.io). Its main responsibility is serving static files generated with Astro SSG which I maintain in a [separate project](https://ayco.io/sh/ayco.io-astro). The generated files from that project will populate a `dist` directory in here, which will then be served as-is.
 
-My main motivation for running my personal site behind this Flask server is to easily develop REST APIs later in the `/api` route using Python. I didn't want to use the default Astro production server for this as I am looking to work with Python more.
+Additional features are:
+1. partial .html templates in `partials` directory are served in route `/p/*`
+
 
 ## Development
 
