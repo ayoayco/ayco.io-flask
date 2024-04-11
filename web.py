@@ -1,5 +1,9 @@
 from flask import Flask, send_from_directory
+from partials import partials
+import datetime
+
 app = Flask(__name__)
+app.register_blueprint(partials, url_prefix='/p')
 
 @app.route('/')
 def home():
@@ -15,7 +19,6 @@ def dist(path):
 @app.errorhandler(404)
 def not_found(e):
     return send_from_directory('dist', '404.html'), 404
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
