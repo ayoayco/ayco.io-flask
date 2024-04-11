@@ -14,4 +14,4 @@ def show(page):
 
 @partials.route('feed')
 def feed():
-    return render_template(f'feed.html', date=datetime.now().strftime('%B %d, %Y, %H:%M:%S'))
+    return render_template(f'feed.html', date=datetime.now().strftime('%B %d, %Y'))
