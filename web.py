@@ -1,6 +1,5 @@
 from flask import Flask, send_from_directory
 from partials import partials
-import datetime
 
 app = Flask(__name__)
 app.register_blueprint(partials, url_prefix='/p')
