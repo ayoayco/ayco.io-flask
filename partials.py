@@ -12,6 +12,6 @@ def show(page):
     except TemplateNotFound:
         return send_from_directory('dist', '404.html'), 404
 
-@partials.route('feed')
-def feed():
-    return render_template(f'feed.html', date=datetime.now().strftime('%B %d, %Y'))
+@partials.route('example')
+def example():
+    return render_template(f'example.html', date=datetime.now().strftime('%B %d, %Y'))
