@@ -1,6 +1,10 @@
 # Deployment Unix socket
 *.sock
 
+# blueprints
+threads.py
+templates/threads.html
+
 # Temp files
 *~
 *swp

@@ -1,8 +1,10 @@
 from flask import Flask, send_from_directory
 from partials import partials
+from threads import threads
 
 app = Flask(__name__)
 app.register_blueprint(partials, url_prefix='/p')
+app.register_blueprint(threads, url_prefix='/threads')
 
 @app.route('/')
 def home():
