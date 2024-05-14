@@ -6,6 +6,11 @@ This is the default server running at [https://ayo.ayco.io](https://ayco.io). It
 
 Additional features are:
 1. route `/p/*` to serve partial .html templates in `partials` directory (e.g, `partials/example.html` partial is accessed via `/p/example`)
+1. attach [/threads](https://ayco.io/sh/threads) flask blueprint behind `/threads` route
+
+
+> [!IMPORTANT]
+> The overall architecture is still experimental. The way I decoupled the dynamic tiny apps here (e.g., [/threads](https://ayco.io/sh/threads), and [ori](https://ayco.io/sh/ori)) is good, but an improvement in this project still needs to be made with regards to managing a common app configuration that the blueprints consume, packaging the software components into modules for better distribution & adoption, and providing various deployment options.
 
 ## Development
 
