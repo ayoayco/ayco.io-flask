@@ -40,10 +40,7 @@ Additional features are:
     $ . .venv/bin/activate
 
     # install wheel:
-    (.venv)$ pip install wheel
-
-    # install gunicorn & flask:
-    (.venv)$ pip install flask
+    (.venv)$ python -m pip install -r requirements.txt
 
     # rejoice!
     ```
