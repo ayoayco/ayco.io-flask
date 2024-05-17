@@ -1,2 +1,4 @@
 flask
 sentry-sdk[flask]
+requests
+markdown
