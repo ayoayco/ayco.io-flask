@@ -30,14 +30,22 @@ sentry_sdk.init(
 
 @app.route('/')
 def home():
-    return send_from_directory('dist', 'index.html')
+    try:
+        return send_from_directory('dist', 'index.html')
+    except:
+        print(' ! dist folder missing')
+        return 'dist folder missing'
 
 @app.route('/<path:path>')
 def dist(path):
-    if '.' in path:
-        return send_from_directory('dist', path)
-    else:
-        return send_from_directory('dist', path + '/index.html')
+    try:
+        if '.' in path:
+            return send_from_directory('dist', path)
+        else:
+            return send_from_directory('dist', path + '/index.html')
+    except:
+        print(' ! dist folder missing')
+        return 'dist folder missing'
 
 @app.errorhandler(404)
 def not_found(e):
