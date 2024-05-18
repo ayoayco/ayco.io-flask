@@ -5,9 +5,8 @@
 This is the default server running at [https://ayo.ayco.io](https://ayco.io). Its main responsibility is serving static files generated with Astro SSG which I maintain in a [separate project](https://ayco.io/sh/ayco.io-astro). The generated files from that project will populate a `dist` directory in here, which will then be served as-is.
 
 Additional features are:
-1. route `/p/*` to serve partial .html templates in `partials` directory (e.g, `partials/example.html` partial is accessed via `/p/example`)
 1. attach [/threads](https://ayco.io/sh/threads) flask blueprint behind `/threads` route
-
+1. perf monitoring and error tracking with [sentry.io](https://sentry.io)
 
 > [!IMPORTANT]
 > The overall architecture is still experimental. The way I decoupled the dynamic tiny apps here (e.g., [/threads](https://ayco.io/sh/threads), and [ori](https://ayco.io/sh/ori)) is good, but an improvement in this project still needs to be made with regards to managing a common app configuration that the blueprints consume, packaging the software components into modules for better distribution & adoption, and providing various deployment options.

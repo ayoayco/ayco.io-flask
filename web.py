@@ -2,11 +2,9 @@ from flask import Flask, send_from_directory
 from flask_caching import Cache
 import sentry_sdk
 import json
-from partials import partials
 from threads.threads import threads
 
 app = Flask(__name__)
-app.register_blueprint(partials, url_prefix='/p')
 app.register_blueprint(threads, url_prefix='/threads')
 app.config.from_file("config.json", load=json.load)
 
