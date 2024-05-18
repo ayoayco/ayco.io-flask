@@ -4,8 +4,7 @@ config.json
 *.sock
 
 # blueprints
-threads.py
-templates/threads.html
+threads/
 
 # Temp files
 *~
