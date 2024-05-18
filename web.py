@@ -1,6 +1,7 @@
+from flask import Flask, send_from_directory
+from flask_caching import Cache
 import sentry_sdk
 import json
-from flask import Flask, send_from_directory
 from partials import partials
 from threads import threads
 
@@ -9,7 +10,10 @@ app.register_blueprint(partials, url_prefix='/p')
 app.register_blueprint(threads, url_prefix='/threads')
 app.config.from_file("config.json", load=json.load)
 
-# sentry.io error monitoring
+# caching
+cache = Cache()
+
+# perf monitoring & error tracking
 sentry_config = app.config["SENTRY"]
 sentry_sdk.init(
     dsn=sentry_config["dsn"],
