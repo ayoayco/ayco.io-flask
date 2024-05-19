@@ -1,22 +1,22 @@
 from flask import Flask, send_from_directory
-from flask_caching import Cache
 import sentry_sdk
 import json
+from cache.cache import cache
 
 app = Flask(__name__)
 
 try:
     from threads.threads import threads
     app.register_blueprint(threads, url_prefix='/threads')
+    print(' * Threads blueprint registered')
 except ImportError:
-    print(' ! threads blueprint missing')
+    print(' ! Threads blueprint not found')
 
 app.config.from_file("config.json", load=json.load)
 
 # caching
-cache = Cache()
-cache.init_app(app)
 print(' * Cache type: ' + app.config["CACHE_TYPE"])
+cache.init_app(app)
 
 # perf monitoring & error tracking
 sentry_config = app.config["SENTRY"]
