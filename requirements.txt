@@ -1,5 +1,5 @@
 wheel
-flask
+flask[async]
 sentry-sdk[flask]
 flask-caching
 
@@ -7,4 +7,3 @@ flask-caching
 requests
 markdown
 aiohttp
-flask[async]
