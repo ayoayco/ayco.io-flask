@@ -5,17 +5,6 @@ import json
 app = Flask(__name__)
 app.config.from_file("config.json", load=json.load)
 
-# /threads
-try:
-    from threads.threads import threads
-    app.register_blueprint(threads, url_prefix='/threads')
-    print(' * Threads blueprint registered')
-    from threads.cache import cache as thread_cache
-    print(' * Threads cache type: ' + app.config["CACHE_TYPE"])
-    thread_cache.init_app(app)
-except ImportError:
-    print(' ! Threads blueprint not found')
-
 # perf monitoring & error tracking
 sentry_config = app.config["SENTRY"]
 print(' * Monitoring DSN: ' + sentry_config["dsn"])
@@ -25,6 +14,17 @@ sentry_sdk.init(
     profiles_sample_rate=sentry_config["profiles_sample_rate"],
     enable_tracing=sentry_config["enable_tracing"],
 )
+
+# threads
+try:
+    from threads.threads import threads
+    app.register_blueprint(threads, url_prefix='/threads')
+    print(' * Threads blueprint registered')
+    from threads.cache import cache as thread_cache
+    print(' * Threads cache type: ' + app.config["CACHE_TYPE"])
+    thread_cache.init_app(app)
+except ImportError:
+    print(' ! Threads blueprint not found')
 
 @app.route('/')
 def home():

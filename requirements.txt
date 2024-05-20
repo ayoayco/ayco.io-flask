@@ -6,3 +6,5 @@ flask-caching
 # threads
 requests
 markdown
+aiohttp
+flask[async]
