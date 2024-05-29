@@ -41,6 +41,13 @@ def dist(path):
 def not_found(e):
     return send_from_directory('dist', '404.html'), 404
 
+#### Start handling for common routes scanned by bots
+@app.route('/empty')
+@app.route('/sito/wp-includes/wlwmanifest.xml')
+def empty_view():
+    content = {'please move along': 'nothing to see here'}
+    return content, 401
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
 
