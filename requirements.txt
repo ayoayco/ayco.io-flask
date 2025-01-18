@@ -7,3 +7,4 @@ flask-caching
 requests
 markdown
 aiohttp
+mastodon-py
