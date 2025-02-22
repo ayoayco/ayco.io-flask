@@ -32,10 +32,13 @@ def home():
 
 @app.route('/<path:path>')
 def dist(path):
-    if '.' in path:
-        return send_from_directory('dist', path)
-    else:
-        return send_from_directory('dist', path + '/index.html')
+    try:
+        if '.' in path:
+            return send_from_directory('dist', path)
+        else:
+            return send_from_directory('dist', path + '/index.html')
+    except:
+        return send_from_directory('dist', '404.html'), 404
 
 @app.errorhandler(404)
 def not_found(e):
