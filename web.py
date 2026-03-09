@@ -33,11 +33,11 @@ def home():
 @app.route('/<path:path>')
 def dist(path):
     try:
-        if '.' in path:
+        if '.' in path: # if path has a dot, we assume it is a file - serve as is
             return send_from_directory('dist', path)
-        else:
+        else: # otherwise, it must be a web URL path, then try to return the index.html
             return send_from_directory('dist', path + '/index.html')
-    except:
+    except: # if nothing was found, return an error 404
         return send_from_directory('dist', '404.html'), 404
 
 @app.errorhandler(404)
@@ -53,4 +53,3 @@ def empty_view():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
-
