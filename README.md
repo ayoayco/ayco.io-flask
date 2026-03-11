@@ -8,9 +8,7 @@ Additional features are:
 
 1. attach [/threads](https://ayco.io/sh/threads) flask blueprint behind `/threads` route
 1. perf monitoring and error tracking with [sentry.io](https://sentry.io)
-
-> [!IMPORTANT]
-> The overall architecture is still experimental. The way I decoupled the dynamic tiny apps here (e.g., [/threads](https://ayco.io/sh/threads), and [ori](https://ayco.io/sh/ori)) is good, but an improvement in this project still needs to be made with regards to managing a common app configuration that the blueprints consume, packaging the software components into modules for better distribution & adoption, and providing various deployment options.
+1. using a common app configuration that the application blueprints consume
 
 ## Development
 
